@@ -47,8 +47,6 @@ services:
     build:
       context: .
     command: /opt/spark/sbin/start-master.sh
-    depends_on:
-      - database
     ports:
       - '7077:7077'
       - '8080:8080'
