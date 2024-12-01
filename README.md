@@ -1,7 +1,7 @@
 Docker Spark
 =============
 
-### Usage
+### Usage Docker
 
 ```shell
 docker build . -t aartintelligent/spark:latest
@@ -9,4 +9,52 @@ docker build . -t aartintelligent/spark:latest
 
 ```shell
 docker push aartintelligent/spark:latest
+```
+
+### Usage Docker Compose
+
+```shell
+docker compose build
+```
+
+```shell
+docker compose up -d
+```
+
+```shell
+docker compose down -v
+```
+
+### Compose
+
+```yaml
+services:
+
+  database:
+    image: postgres:17
+    user: root
+    restart: always
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=password
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - /opt/postgres/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  spark:
+    build:
+      context: .
+    restart: always
+    tty: true
+    depends_on:
+      - database
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+
+volumes:
+  database-volume:
 ```
