@@ -1,4 +1,5 @@
 from pyspark.sql import SparkSession
+from pyspark.sql.types import *
 
 spark = SparkSession.builder \
     .appName('Save DataFrame to database') \
@@ -11,9 +12,13 @@ data = [
     (3, 'Charlie'   , 61)
 ]
 
-columns = ['id', 'name', 'age']
+schema = StructType([
+    StructField('id', IntegerType(), True),
+    StructField('name', StringType(), True),
+    StructField('age', IntegerType(), True)
+])
 
-df = spark.createDataFrame(data, columns)
+df = spark.createDataFrame(data, schema)
 
 db_url = 'jdbc:postgresql://database:5432/postgres'
 
