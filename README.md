@@ -39,7 +39,8 @@ services:
       - POSTGRES_PASSWORD=password
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - /opt/postgres/data:/var/lib/postgresql/data
+      - database-volume:/var/lib/postgresql/data
+      # - /opt/postgres/data:/var/lib/postgresql/data
     ports:
       - '5432:5432'
 
@@ -47,6 +48,8 @@ services:
     build:
       context: .
     command: /opt/spark/sbin/start-master.sh
+    volumes:
+      - ./app:/opt/spark/app
     ports:
       - '7077:7077'
       - '8080:8080'
