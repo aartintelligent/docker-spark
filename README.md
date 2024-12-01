@@ -35,7 +35,7 @@ services:
     user: root
     environment:
       - POSTGRES_DB=postgres
-      - POSTGRES_USER=odoo
+      - POSTGRES_USER=spark
       - POSTGRES_PASSWORD=password
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
@@ -47,7 +47,7 @@ services:
   spark:
     build:
       context: .
-    command: /opt/spark/sbin/start-master.sh
+    command: bin/spark-shell
     volumes:
       - ./app:/opt/spark/app
     ports:
