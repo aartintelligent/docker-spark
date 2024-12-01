@@ -3,8 +3,6 @@ Docker Spark
 
 ### Usage
 
-Docker
-
 ```shell
 docker build . -t aartintelligent/spark:latest
 ```
