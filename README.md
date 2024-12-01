@@ -25,6 +25,10 @@ docker compose up -d
 docker compose down -v
 ```
 
+```shell
+docker compose run -it spark bin/spark-submit app/example.py
+```
+
 ### Compose
 
 ```yaml
