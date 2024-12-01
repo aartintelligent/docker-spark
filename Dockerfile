@@ -23,4 +23,6 @@ RUN if [ -s "/requirements.txt" ]; then \
 
 WORKDIR /opt/spark
 
+CMD ["sbin/start-master.sh"]
+
 USER spark
