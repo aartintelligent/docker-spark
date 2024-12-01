@@ -16,7 +16,7 @@ services:
   spark:
     build:
       context: .
-    command: /ppt/spark/sbin/start-master.sh
+    command: /opt/spark/sbin/start-master.sh
     depends_on:
       - database
     ports:
