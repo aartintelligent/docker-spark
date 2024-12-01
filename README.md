@@ -22,11 +22,11 @@ docker compose up -d
 ```
 
 ```shell
-docker compose down -v
+docker compose run -it spark bin/spark-submit app/example.py
 ```
 
 ```shell
-docker compose run -it spark bin/spark-submit app/example.py
+docker compose down -v
 ```
 
 ### Compose
