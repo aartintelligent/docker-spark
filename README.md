@@ -47,8 +47,6 @@ services:
   spark:
     build:
       context: .
-    restart: always
-    tty: true
     depends_on:
       - database
     ports:
