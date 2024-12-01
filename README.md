@@ -51,7 +51,13 @@ services:
   spark:
     build:
       context: .
-    command: bin/spark-shell
+    command: /opt/spark/sbin/start-master.sh
+#    deploy:
+#      resources:
+#        reservations:
+#          devices:
+#            - driver: nvidia
+#              capabilities: [ gpu ]
     volumes:
       - ./app:/opt/spark/app
     ports:
