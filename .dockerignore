@@ -1,5 +1,10 @@
-/.venv
 /.idea
+/.venv
 __pycache__
-Dockerfile
-README.md
+/.git
+/.github
+/.gitignore
+/docker-compose.yml
+/Dockerfile
+/LICENSE
+/README.md
