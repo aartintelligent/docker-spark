@@ -22,7 +22,7 @@ docker compose up -d
 ```
 
 ```shell
-docker compose run -it spark bin/spark-submit app/example.py
+docker compose exec -it spark bin/spark-submit app/example.py
 ```
 
 ```shell
