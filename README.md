@@ -51,7 +51,7 @@ services:
   spark:
     build:
       context: .
-    command: /opt/spark/sbin/start-master.sh
+    command: tail -f /dev/null
 #    deploy:
 #      resources:
 #        reservations:
@@ -66,4 +66,5 @@ services:
 
 volumes:
   database-volume:
+
 ```
