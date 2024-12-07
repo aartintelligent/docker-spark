@@ -18,14 +18,14 @@ services:
     build:
       context: .
     command: tail -f /dev/null
-#    deploy:
-#      resources:
-#        reservations:
-#          devices:
-#            - driver: nvidia
-#              capabilities: [ gpu ]
+    #    deploy:
+    #      resources:
+    #        reservations:
+    #          devices:
+    #            - driver: nvidia
+    #              capabilities: [ gpu ]
     volumes:
-      - ./app:/opt/spark/app
+      - ./spark/app:/opt/spark/app
     ports:
       - '7077:7077'
       - '8080:8080'
