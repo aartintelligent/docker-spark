@@ -59,7 +59,7 @@ services:
 #            - driver: nvidia
 #              capabilities: [ gpu ]
     volumes:
-      - ./spark/app:/opt/spark/app
+      - ./app:/opt/spark/app
     ports:
       - '7077:7077'
       - '8080:8080'
