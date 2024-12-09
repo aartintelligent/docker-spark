@@ -8,7 +8,7 @@ FROM spark:python3
 
 USER root
 
-COPY --chown=spark:spark spark /opt/spark/
+COPY --chown=spark:spark app /opt/spark/app/
 
 COPY --from=builder --chown=spark:spark /jars/* /opt/spark/jars/
 
